@@ -7,6 +7,7 @@ TensorBoard - Examples
 ## Environment
 + [TensorFlow Docker Image](https://hub.docker.com/r/wall72/tensorflow/) by me
 + Dataset : MNIST
++ TensorBoard : docker exec -it tensorflow tensorboard --logdir=/logs/mnist
 
 ## Examples
 + 1. Softmax
@@ -14,4 +15,8 @@ TensorBoard - Examples
 + 3. NN with Xavier initializer
 + 4. NN with Xavier initializer & Dropout
 + 5. CNN
-+ 6. RNN
+
+## TensorBoard
+![Screenshot #1](https://github.com/wall72/wall72.github.io/blob/master/images/TB01.jpg?raw=true)
+![Screenshot #2](https://github.com/wall72/wall72.github.io/blob/master/images/TB01.jpg?raw=true)
+![Screenshot #3](https://github.com/wall72/wall72.github.io/blob/master/images/TB01.jpg?raw=true)
