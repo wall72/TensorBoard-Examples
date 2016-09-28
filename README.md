@@ -18,5 +18,5 @@ TensorBoard - Examples
 
 ## TensorBoard
 ![Screenshot #1](https://github.com/wall72/wall72.github.io/blob/master/images/TB01.jpg?raw=true)
-![Screenshot #2](https://github.com/wall72/wall72.github.io/blob/master/images/TB01.jpg?raw=true)
-![Screenshot #3](https://github.com/wall72/wall72.github.io/blob/master/images/TB01.jpg?raw=true)
+![Screenshot #2](https://github.com/wall72/wall72.github.io/blob/master/images/TB02.jpg?raw=true)
+![Screenshot #3](https://github.com/wall72/wall72.github.io/blob/master/images/TB03.jpg?raw=true)
