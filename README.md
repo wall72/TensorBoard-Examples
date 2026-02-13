@@ -1,22 +1,36 @@
 # TensorBoard-Examples
-TensorBoard - Examples
-
-## All Examples From
-+ [Machine Learning for Everyone](https://github.com/alrojo/tensorflow-tutorial/tree/master/lab1_FFN) by Sung Kim
+TensorBoard examples updated for **TensorFlow 2.15 LTS**.
 
 ## Environment
-+ [TensorFlow Docker Image](https://hub.docker.com/r/wall72/tensorflow/) by me
-+ Dataset : MNIST
-+ TensorBoard : docker exec -it tensorflow tensorboard --logdir=/logs/mnist
+- Python 3.10+
+- TensorFlow 2.15 LTS
+- Dataset: MNIST (`tf.keras.datasets.mnist`)
+
+## Run
+```bash
+pip install tensorflow==2.15.*
+jupyter notebook
+```
+
+각 노트북을 실행한 뒤, 아래처럼 TensorBoard를 실행하세요.
+
+```bash
+tensorboard --logdir logs/mnist
+```
 
 ## Examples
-+ 1. Softmax
-+ 2. NN
-+ 3. NN with Xavier initializer
-+ 4. NN with Xavier initializer & Dropout
-+ 5. CNN
+1. Softmax (`01-softmax.ipynb`)
+2. NN (`02-nn.ipynb`)
+3. NN with Xavier/Glorot initializer (`03-nn-xavier.ipynb`)
+4. NN with Xavier/Glorot initializer + Dropout (`04-nn-xavier-dropout.ipynb`)
+5. CNN (`05-cnn.ipynb`)
 
-## TensorBoard
-![Screenshot #1](https://github.com/wall72/wall72.github.io/blob/master/images/TB01.jpg?raw=true)
-![Screenshot #2](https://github.com/wall72/wall72.github.io/blob/master/images/TB02.jpg?raw=true)
-![Screenshot #3](https://github.com/wall72/wall72.github.io/blob/master/images/TB03.jpg?raw=true)
+
+## Notebook execution results 보기
+아래 명령으로 노트북을 실제 실행하고 HTML 결과물을 만들 수 있습니다.
+
+```bash
+python scripts/execute_notebooks.py
+```
+
+생성된 결과 파일은 `results/*.html`에서 확인할 수 있습니다.
