@@ -15,15 +15,50 @@ ROOT = Path(__file__).resolve().parents[1]
 RESULTS_DIR = ROOT / "results"
 
 
+def tensorflow_install_guide() -> str:
+    py = sys.version_info
+    version_str = f"{py.major}.{py.minor}"
+    guide = [
+        "TensorFlow가 설치되어 있지 않아 노트북을 실행할 수 없습니다.",
+        f"현재 Python 버전: {version_str}",
+        "",
+        "설치 가이드:",
+    ]
+
+    if py.major == 3 and py.minor <= 11:
+        guide.extend(
+            [
+                "- Python 3.10/3.11 환경에서는 아래 명령을 먼저 시도하세요:",
+                "  pip install 'tensorflow==2.20.*'",
+            ]
+        )
+    else:
+        guide.extend(
+            [
+                "- TensorFlow 2.20 wheel 지원 범위를 확인하세요 (Python 버전에 따라 설치 가능 버전이 달라질 수 있습니다).",
+                "- 아래 중 하나를 사용하세요:",
+                "  1) Python 3.10/3.11 가상환경 생성 후: pip install 'tensorflow==2.20.*'",
+                "  2) 현재 Python 유지 시: pip install tensorflow  (인덱스의 최신 안정화 버전)",
+            ]
+        )
+
+    guide.extend(
+        [
+            "",
+            "추가 확인:",
+            "- pip 오류에 버전 목록이 보이는데 2.20이 없다면, 현재 패키지 인덱스에서 2.20이 제공되지 않는 상황입니다.",
+            "- 이 경우: (a) 인덱스를 공식 PyPI로 변경하거나 (b) tensorflow 최신 안정화 버전으로 설치하세요.",
+            "- 네트워크/프록시 제한 환경에서도 동일한 메시지가 발생할 수 있습니다.",
+        ]
+    )
+    return "\n".join(guide)
+
+
 def check_tensorflow() -> None:
     try:
         import tensorflow as tf  # noqa: F401
     except Exception as exc:  # pragma: no cover
-        raise SystemExit(
-            "TensorFlow가 설치되어 있지 않아 노트북을 실행할 수 없습니다. "
-            "`pip install tensorflow==2.15.*` 후 다시 실행하세요.\n"
-            f"원본 오류: {exc}"
-        )
+        raise SystemExit(f"{tensorflow_install_guide()}\n원본 오류: {exc}")
 
 
 def run() -> int:
